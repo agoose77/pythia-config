@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/projectpythia/pythia-config/cookbook.schema.json",
+  "$ref": "#/definitions/pythiaConfig",
+  "definitions": {
+    "pythiaConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "gallery": {
+          "$ref": "#/definitions/gallery"
+        },
+        "ci": {
+          "$ref": "#/definitions/ci"
+        }
+      }
+    },
+    "ci": {
+      "properties": {
+        "cache-execution": {
+          "type": "boolean",
+          "default": true
+        },
+        "execute-on-binder": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "gallery": {
+      "properties": {
+        "thumbnail": {
+          "type": "string"
+        },
+        "tags": {
+          "$ref": "#/definitions/tags"
+        }
+      },
+      "required": [],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "tags": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
